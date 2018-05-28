@@ -1,14 +1,33 @@
-<ion-header>
+<ion-header primary>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      AD BUDDY
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="openMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card *ngIf="currentUser">
+    <div class="myThumb">
+      <img [src]="currentUser.picture">
+    </div>
+    <ion-card-header>
+      {{ currentUser.displayName }}
+    </ion-card-header>
+    <ion-list>
+      <button ion-item>
+        <ion-icon name="mail" item-start></ion-icon>
+        {{ currentUser.email }}
+      </button>
+    </ion-list>
+    <ion-card-content>
+      Data scanning...
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,0 +1,22 @@
+page-login {
+    ion-content{
+        background: url(../../assets/imgs/login_bg.jpg) no-repeat center fixed;
+        background-size: cover;
+    }
+    .blur-landing {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(3, 33, 57, 0.90);
+    /*background-color: rgba(100, 3, 17, 0.7);
+    background-color: rgba(213, 175, 195, 0.95);*/
+    padding-top: 0px;
+    z-index: 0;
+    }
+    .presentation {
+        position: fixed;
+        padding: 80px 30px;
+        margin: 0 auto;
+        z-index: 1;
+    }
+}

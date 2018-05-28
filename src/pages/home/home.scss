@@ -1,3 +1,16 @@
 page-home {
-
+    .myThumb{
+        margin: 0 auto;
+        padding: 10px 70px;
+        text-align: center;
+    }
+    .myThumb img {
+        width: 100%;
+        position: relative;
+        text-align: center;
+    }
+    ion-card{
+        text-align: center;
+        background: #b4b6ba;
+    }
 }
