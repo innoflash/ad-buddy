@@ -1,6 +1,6 @@
 {
   "name": "ad-buddy",
-  "app_id": "",
+  "app_id": "68216b24",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
