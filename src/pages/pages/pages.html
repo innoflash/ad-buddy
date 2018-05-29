@@ -26,7 +26,7 @@
   </ion-card>
   <ion-card *ngIf="showPages">
     <ion-list>
-      <ion-item *ngFor="let like of likedPages">
+      <ion-item *ngFor="let like of likedPages" (click)="optLike(like)">
         <ion-avatar item-start>
           <!-- <ion-icon name="logo-facebook"></ion-icon>-->
           <img [src]="like.picture.data.url"> 

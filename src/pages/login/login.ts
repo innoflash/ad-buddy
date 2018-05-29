@@ -36,6 +36,7 @@ export class LoginPage {
         console.log('will do firebase facebook login')
         var provider = new firebase.auth.FacebookAuthProvider();
         provider.addScope('user_likes');
+        provider.addScope('email');
         provider.addScope('user_managed_groups');
 
         this.fire.auth.signInWithPopup(provider)

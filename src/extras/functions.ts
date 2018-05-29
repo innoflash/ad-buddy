@@ -4,7 +4,7 @@ import { Stats } from "./stats";
 
 export class Functions{
 
-    static getUser(user:any = null) :User{
+    static getUser(user) :User{
         var currentUser = new User();
         currentUser.first_name = user.additionalUserInfo.profile.first_name;
         currentUser.last_name = user.additionalUserInfo.profile.last_name;
@@ -13,7 +13,7 @@ export class Functions{
         currentUser.displayName = user.additionalUserInfo.profile.name;
         currentUser.phoneNumber = user.user.phoneNumber;
         currentUser.picture = user.additionalUserInfo.profile.picture.data.url;
-        console.log(currentUser)
+        console.log(currentUser);
         return currentUser;
     }
 

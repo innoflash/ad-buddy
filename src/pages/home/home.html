@@ -1,33 +1,46 @@
 <ion-header primary>
-  <ion-navbar>
-    <ion-title>
-      AD BUDDY
-    </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="openMenu()">
-        <ion-icon name="menu"></ion-icon>
-      </button>
-    </ion-buttons>
+    <ion-navbar>
+        <ion-title>
+            AD BUDDY
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="openMenu()">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
 
-  </ion-navbar>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngIf="currentUser">
-    <div class="myThumb">
-      <img [src]="currentUser.picture">
-    </div>
-    <ion-card-header>
-      {{ currentUser.displayName }}
-    </ion-card-header>
-    <ion-list>
-      <button ion-item>
-        <ion-icon name="mail" item-start></ion-icon>
-        {{ currentUser.email }}
-      </button>
-    </ion-list>
-    <ion-card-content>
-      Data scanning...
-    </ion-card-content>
-  </ion-card>
+    <ion-card *ngIf="currentUser">
+        <div class="myThumb">
+            <img [src]="currentUser.picture">
+        </div>
+        <ion-card-header>
+            {{ currentUser.displayName }}
+        </ion-card-header>
+        <ion-list>
+            <button ion-item>
+                <ion-icon name="mail" item-start></ion-icon>
+                {{ currentUser.email }}
+            </button>
+        </ion-list>
+
+    </ion-card>
+
+    <ion-card>
+        <ion-card-content>
+            Data scanning...
+        </ion-card-content>
+        <ion-card-header color="secondary">
+            Card Header
+        </ion-card-header>
+
+        <ion-card-content>
+            Just like a normal page, cards can be customized to include headers. To add a header to a card, add the
+            component inside of your card:
+        </ion-card-content>
+
+    </ion-card>
 </ion-content>

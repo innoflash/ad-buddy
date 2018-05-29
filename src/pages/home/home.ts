@@ -21,6 +21,8 @@ import {GroupsPage} from '../groups/groups';
 import {PagesPage} from '../pages/pages';
 import {SQLite} from "@ionic-native/sqlite";
 import {AdBuddyDatabase} from "../../extras/db";
+import {SyncedPagesPage} from "../synced-pages/synced-pages";
+import {SyncedGroupsPage} from "../synced-groups/synced-groups";
 
 @Component({
     selector: 'page-home',
@@ -80,19 +82,18 @@ export class HomePage {
                     }
                 },
                 {
-                    text: 'My Groups',
+                    text: 'Synced Groups',
                     icon: 'logo-facebook',
                     handler: () => {
                         console.log('Destructive clicked');
-                        this.navCtrl.push(GroupsPage);
+                        this.navCtrl.push(SyncedGroupsPage);
                     }
                 },
                 {
                     text: 'Synced Pages',
                     icon: 'logo-facebook',
                     handler: () => {
-                        console.log('Archive clicked');
-                        this.navCtrl.push(PagesPage);
+                        this.navCtrl.push(SyncedPagesPage);
                     }
                 }, {
                     text: 'My Ads',

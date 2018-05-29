@@ -19,6 +19,7 @@ import {PagesPage} from '../pages/pages/pages';
 import {SettingsPage} from '../pages/settings/settings';
 import {SyncedPagesPage} from "../pages/synced-pages/synced-pages";
 import {SQLite} from '@ionic-native/sqlite';
+import {SyncedGroupsPage} from "../pages/synced-groups/synced-groups";
 
 
 export const firebase = {
@@ -40,7 +41,8 @@ export const firebase = {
         GroupsPage,
         PagesPage,
         SettingsPage,
-        SyncedPagesPage
+        SyncedPagesPage,
+        SyncedGroupsPage
     ],
     imports: [
         BrowserModule,
@@ -58,7 +60,8 @@ export const firebase = {
         GroupsPage,
         PagesPage,
         SettingsPage,
-        SyncedPagesPage
+        SyncedPagesPage,
+        SyncedGroupsPage
     ],
     providers: [
         StatusBar,

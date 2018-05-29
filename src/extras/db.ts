@@ -16,17 +16,18 @@ export class AdBuddyDatabase {
     static sender: string = '_sender';
     static page_id: string = 'page_id';
     static group_id: string = 'group_id';
+    static keywords: string = '_keywords';
 
     static wireDatabase(sqlite: SQLite): void {
         sqlite.create({
             name: this.dbname,
             location: 'default'
         }).then((db: SQLiteObject) => {
-            db.executeSql('CREATE TABLE IF NOT EXISTS fcbk_groups_adb (_id INTEGER PRIMARY KEY, facebook_id VARCHAR(150) UNIQUE, _name VARCHAR(255), _icon VARCHAR(255), activated BOOLEAN)', {})
+            db.executeSql('CREATE TABLE IF NOT EXISTS fcbk_groups_adb (_id INTEGER PRIMARY KEY, facebook_id VARCHAR(150) UNIQUE, _name VARCHAR(255), _icon VARCHAR(255), _keywords TEXT, activated BOOLEAN)', {})
                 .then(res => {
                     console.log('groups', res);
                 }).catch(error => console.log(error));
-            db.executeSql('CREATE TABLE IF NOT EXISTS fcbk_pages_adb (_id INTEGER PRIMARY KEY, facebook_id VARCHAR(150) UNIQUE, _name VARCHAR(255), _icon VARCHAR(255), activated BOOLEAN)', {})
+            db.executeSql('CREATE TABLE IF NOT EXISTS fcbk_pages_adb (_id INTEGER PRIMARY KEY, facebook_id VARCHAR(150) UNIQUE, _name VARCHAR(255), _icon VARCHAR(255), _keywords TEXT activated BOOLEAN)', {})
                 .then(res => {
                     console.log('pages', res);
                 }).catch(error => console.log(error));
@@ -34,7 +35,7 @@ export class AdBuddyDatabase {
                 .then(res => {
                     console.log('grp posts', res);
                 }).catch(error => console.log(error));
-            db.executeSql('CREATE TABLE IF NOT EXISTS page_posts_adb (_id INTEGER PRIMARY KEY, facebook_id VARCHAR(150) UNIQUE, page_id VARCHAR(150), _post TEXT, _time VARCHAR(40), _sender VARCHAR(150), FOREIGN KEY(page_id) REFERENCES fcbk_pages_adb(facebook_id))', {})
+            db.executeSql('CREATE TABLE IF NOT EXISTS page_posts_adb (_id INTEGER PRIMARY KEY, facebook_id VARCHAR(150) UNIQUE, page_id VARCHAR(150), _post TEXT, _time VARCHAR(40), FOREIGN KEY(page_id) REFERENCES fcbk_pages_adb(facebook_id))', {})
                 .then(res => {
                     console.log('pages posts', res);
                 }).catch(error => console.log(error));
